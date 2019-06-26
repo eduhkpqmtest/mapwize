@@ -1,0 +1,34 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+
+var loc = window.location.toString();
+params = loc.split('?')[1];
+/*
+params2 = loc.split('&')[2];
+params3 = loc.split('&')[3];
+params4 = loc.split('&')[4];
+params5 = loc.split('&')[5];
+params6 = loc.split('&')[6];
+*/
+
+iframeSrc="https://maps.mapwize.io/#/p/campus_test?k=e17afa4b139e8ffe&embed=true&menu=false&organizationId=5d00b45922efc1002ddd5eaf&z=17.081"
+//iframe = document.getElementById('myiframe');
+if (params) {
+	url = iframeSrc.split('?')[0];
+	keyParams = iframeSrc.split('?')[1];
+	iframeSrc = url + '/' + params + '?' + keyParams;
+} else {
+	iframeSrc="https://maps.mapwize.io/#/v/campus_test?k=e17afa4b139e8ffe&embed=true&menu=false&organizationId=5d00b45922efc1002ddd5eaf&z=17.081"
+}
+document.getElementById('myiframe').src=iframeSrc;
+//alert(iframe.src);
+});
+</script>
+</head>
+<body>
+<iframe id="myiframe" src="" width="100%" height="100%"></iframe>
+</body>
+</html>
